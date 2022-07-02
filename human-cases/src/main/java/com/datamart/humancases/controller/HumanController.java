@@ -1,4 +1,4 @@
-package com.datamart.dengueservice;
+package com.datamart.humancases.controller;
 
 import javax.validation.Valid;
 
@@ -10,25 +10,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.datamart.entity.Humano;
-import com.datamart.service.HumanoService;
+import com.datamart.humancases.entity.Human;
+import com.datamart.humancases.service.HumanService;
 
 @Controller
-public class HumanoController {
-    
+public class HumanController {
     @Autowired
-    private HumanoService humanoService;
+    private HumanService humanService;
 
-    @GetMapping("/form/registro-humano")
-    public ModelAndView getList(){
-        ModelAndView mv = new ModelAndView("registroHumano");
+    @GetMapping("/form/human-register")
+    public ModelAndView getList() {
+        ModelAndView mv = new ModelAndView("humanRegister");
         return mv;
     }
 
     @PostMapping("/form/save")
-    public String saveForm(@Valid Humano humano, BindingResult result, RedirectAttributes redirect){
-        this.humanoService.save(humano);
-        return "redirect:/index";
+    public String saveForm(@Valid Human human, BindingResult result, RedirectAttributes redirect) {
+        this.humanService.save(human);
+        return "redirect:/registered";
     }
-
 }
