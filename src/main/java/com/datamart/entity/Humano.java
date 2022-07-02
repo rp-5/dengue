@@ -1,5 +1,7 @@
 package com.datamart.entity;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,9 +9,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Table(name="humano")
 @Entity(name="humano")
 
+@Getter
+@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Humano {
     
     @Id
@@ -32,12 +45,12 @@ public class Humano {
     private boolean possuiSintoma;
 
     @Column(name="sintoma")
-    private String sintoma;
+    private ArrayList<String> sintoma;
 
     @Column(name="gravidade")
     private String gravidade;
 
-    public Humano(String nome, int idade, String endereco, String complemento, boolean possuiSintoma, String sintoma, String gravidade){
+    public Humano(String nome, int idade, String endereco, String complemento, boolean possuiSintoma, ArrayList<String> sintoma, String gravidade){
         this.nome = nome;
         this.idade = idade;
         this.endereco = endereco;

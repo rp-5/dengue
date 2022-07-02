@@ -8,9 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
     
 
-    @GetMapping("/lista")
+    @GetMapping("/index")
     public ModelAndView getList(){
-        ModelAndView mv = new ModelAndView("lista");
+        ModelAndView mv = new ModelAndView("index");
         return mv;
     }
     
