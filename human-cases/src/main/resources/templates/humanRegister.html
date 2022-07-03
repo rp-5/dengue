@@ -15,12 +15,12 @@
     <!-- <label>
         <input type="checkbox" name="symptom" th:each="symptom : ${symptomList}" th:value="${symptom.id}" th:text="${symptom.name}" th:field="*{symptomList}"/>
     </label> -->
+
     Qual a gravidade: <input type="text" id="gravity" name="gravity" />
 
-    Status: <select id="status" name="status">
-        <option>Sem suspeita</option>
-        <option>Suspeito</option>
-        <option>Confirmado</option>
+    Status: 
+    <select name="status">
+        <option th:each="status : ${statusList}" th:value="${status.id}" th:text="${status.name}"></option>
     </select>
 
     <button type="submit">Registrar pessoa</button>

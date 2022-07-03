@@ -1,9 +1,5 @@
 package com.datamart.humancases.entity;
 
-import java.util.List;
-
-// import java.util.ArrayList;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,10 +49,11 @@ public class Human {
     @Column(name="gravity")
     private String gravity;
 
-    @Column(name="status")
-    private String status;
+    @ManyToOne
+    @JoinColumn(name="status_id")
+    private Status status;
 
-    public Human(String name, int age, String adress, String complement, Symptom symptom, String gravity, String status){
+    public Human(String name, int age, String adress, String complement, Symptom symptom, String gravity, Status status){
         this.name = name;
         this.age = age;
         this.adress = adress;

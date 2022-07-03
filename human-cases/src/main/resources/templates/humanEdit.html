@@ -21,11 +21,14 @@
 
     Qual a gravidade: <input type="text" id="gravity" name="gravity" th:value="${human.gravity}"/>
 
-    Status: <select id="status" name="status" th:selected="${human.status}">
-        <option>Sem suspeita</option>
-        <option>Suspeito</option>
-        <option>Confirmado</option>
+    Status:
+    <select name="status" class="custom-select">
+        <option th:each="status : ${statusList}"
+         th:value="${status.id}" 
+         th:text="${status.name}" 
+         th:selected="${status.id} == ${human.status.id}"></option>
     </select>
+
 
     <button type="submit">Registrar pessoa</button>
 

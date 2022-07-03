@@ -30,7 +30,7 @@
                 <td th:text="${human.complement}"></td>
                 <td th:text="${human.gravity}"></td>
                 <td th:text="${human.symptom.name}"></td>
-                <td th:text="${human.status}"></td>
+                <td th:text="${human.status.name}"></td>
                 <td>
                     <a th:href="@{/edit/human/{id}(id=${human.id})}">
                     <i class="fas fa-edit"></i></a>
