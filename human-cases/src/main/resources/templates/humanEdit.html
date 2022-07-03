@@ -1,0 +1,25 @@
+<form action="/form/save" method="POST">
+    
+    <input type="text" readonly id="id" name="id" th:value="${human.id}">
+
+    Nome: <input type="text" id="name" name="name" th:value="${human.name}"/>
+
+    Idade: <input type="number" id="age" name="age" th:value="${human.age}"/>
+
+    Endereço: <input type="text" id="adress" name="adress" th:value="${human.adress}"/>
+
+    Complemento: <input type="text" id="complement" name="complement" th:value="${human.complement}"/>
+
+    Quais são os sintomas: <input type="text" id="symptom" name="symptom" th:value="${human.symptom}"/>
+
+    Qual a gravidade: <input type="text" id="gravity" name="gravity" th:value="${human.gravity}"/>
+
+    Status: <select id="status" name="status" th:selected="${human.status}">
+        <option>Sem suspeita</option>
+        <option>Suspeito</option>
+        <option>Confirmado</option>
+    </select>
+
+    <button type="submit">Registrar pessoa</button>
+
+</form>

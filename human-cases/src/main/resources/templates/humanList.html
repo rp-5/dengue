@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <h2>Registros de Pessoas: </h2>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Complemento</th>
+                <th scope="col">Gravidade</th>
+                <th scope="col">Sintomas</th>
+                <th scope="col">Status</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="human : ${humanList}">
+                <th scope="row" th:text="${human.id}"></th>
+                <td th:text="${human.name}"></td>
+                <td th:text="${human.age}"></td>
+                <td th:text="${human.adress}"></td>
+                <td th:text="${human.complement}"></td>
+                <td th:text="${human.symptom}"></td>
+                <td th:text="${human.gravity}"></td>
+                <td th:text="${human.status}"></td>
+                <td>
+                    <a th:href="@{/edit/human/{id}(id=${human.id})}">
+                    <i class="fas fa-edit"></i></a>
+
+                    <a th:href="@{/delete/human/{id}(id=${human.id})}">
+                    <i class="fas fa-eraser"></i></a>
+
+                    <i style='font-size:24px' class='fas'>&#xf5d0;</i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </body>
+</html>

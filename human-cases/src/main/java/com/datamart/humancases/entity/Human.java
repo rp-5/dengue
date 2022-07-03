@@ -1,6 +1,6 @@
 package com.datamart.humancases.entity;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,17 +43,21 @@ public class Human {
     private String complement;
 
     @Column(name="symptom")
-    private ArrayList<String> symptom;
+    private String symptom;
 
     @Column(name="gravity")
     private String gravity;
 
-    public Human(String name, int age, String adress, String complement, ArrayList<String> symptom, String gravity){
+    @Column(name="status")
+    private String status;
+
+    public Human(String name, int age, String adress, String complement, String symptom, String gravity, String status){
         this.name = name;
         this.age = age;
         this.adress = adress;
         this.complement = complement;
         this.symptom = symptom;
         this.gravity = gravity;
+        this.status = status;
     }
 }
