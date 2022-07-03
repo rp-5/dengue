@@ -51,4 +51,10 @@ public class HumanController {
         mv.addObject("human", human);
         return mv;
     }
+
+    @GetMapping("/delete/human/{id}")
+    public String delete(@PathVariable("id")Long id){
+        this.humanService.delete(id);
+        return "redirect:/list/human";
+    }
 }

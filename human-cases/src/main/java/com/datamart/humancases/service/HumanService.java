@@ -24,4 +24,8 @@ public class HumanService {
     public Human findById(Long id){
         return this.humanRepository.findById(id).get();
     }
+
+    public void delete(Long id){
+        this.humanRepository.deleteById(id);
+    }
 }
