@@ -14,16 +14,23 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.datamart.humancases.entity.Human;
+import com.datamart.humancases.entity.Symptom;
 import com.datamart.humancases.service.HumanService;
+import com.datamart.humancases.service.SymptomService;
 
 @Controller
 public class HumanController {
     @Autowired
     private HumanService humanService;
 
+    @Autowired
+    private SymptomService symptomService;
+
     @GetMapping("/form/human-register")
     public ModelAndView getRegister() {
         ModelAndView mv = new ModelAndView("humanRegister");
+        List<Symptom> symptomList = this.symptomService.getSymptomList();
+        mv.addObject("symptomList", symptomList);
         return mv;
     }
 
@@ -49,6 +56,9 @@ public class HumanController {
 
         Human human = this.humanService.findById(id);
         mv.addObject("human", human);
+
+        List<Symptom> symptomList = this.symptomService.getSymptomList();
+        mv.addObject("symptomList", symptomList);
         return mv;
     }
 

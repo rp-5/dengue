@@ -10,7 +10,14 @@
 
     Complemento: <input type="text" id="complement" name="complement" th:value="${human.complement}"/>
 
-    Quais são os sintomas: <input type="text" id="symptom" name="symptom" th:value="${human.symptom}"/>
+    Quais são os sintomas: 
+    <select name="symptom" class="custom-select">
+        <option th:each="symptom : ${symptomList}" 
+        th:value="${symptom.id}" 
+        th:text="${symptom.name}"
+        th:selected="${symptom.id} == ${human.symptom.id}"></option>
+    </select>
+    <!-- <input type="text" id="symptom" name="symptom" th:value="${human.symptom}"/> -->
 
     Qual a gravidade: <input type="text" id="gravity" name="gravity" th:value="${human.gravity}"/>
 

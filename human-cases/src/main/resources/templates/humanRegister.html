@@ -8,8 +8,13 @@
 
     Complemento: <input type="text" id="complement" name="complement" />
 
-    Quais são os sintomas: <input type="text" id="symptom" name="symptom" />
-
+    Quais são os sintomas: 
+    <select name="symptom">
+        <option th:each="symptom : ${symptomList}" th:value="${symptom.id}" th:text="${symptom.name}"></option>
+    </select>
+    <!-- <label>
+        <input type="checkbox" name="symptom" th:each="symptom : ${symptomList}" th:value="${symptom.id}" th:text="${symptom.name}" th:field="*{symptomList}"/>
+    </label> -->
     Qual a gravidade: <input type="text" id="gravity" name="gravity" />
 
     Status: <select id="status" name="status">

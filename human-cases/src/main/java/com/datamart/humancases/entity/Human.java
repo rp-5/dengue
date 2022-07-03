@@ -1,5 +1,7 @@
 package com.datamart.humancases.entity;
 
+import java.util.List;
+
 // import java.util.ArrayList;
 
 import javax.persistence.Column;
@@ -7,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -42,8 +46,9 @@ public class Human {
     @Column(name="complement")
     private String complement;
 
-    @Column(name="symptom")
-    private String symptom;
+    @ManyToOne
+    @JoinColumn(name= "symptom_id")
+    private Symptom symptom;
 
     @Column(name="gravity")
     private String gravity;
@@ -51,7 +56,7 @@ public class Human {
     @Column(name="status")
     private String status;
 
-    public Human(String name, int age, String adress, String complement, String symptom, String gravity, String status){
+    public Human(String name, int age, String adress, String complement, Symptom symptom, String gravity, String status){
         this.name = name;
         this.age = age;
         this.adress = adress;

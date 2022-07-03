@@ -28,8 +28,8 @@
                 <td th:text="${human.age}"></td>
                 <td th:text="${human.adress}"></td>
                 <td th:text="${human.complement}"></td>
-                <td th:text="${human.symptom}"></td>
                 <td th:text="${human.gravity}"></td>
+                <td th:text="${human.symptom.name}"></td>
                 <td th:text="${human.status}"></td>
                 <td>
                     <a th:href="@{/edit/human/{id}(id=${human.id})}">
