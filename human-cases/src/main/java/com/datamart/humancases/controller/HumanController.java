@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.datamart.humancases.entity.Gravity;
 import com.datamart.humancases.entity.Human;
 import com.datamart.humancases.entity.Status;
 import com.datamart.humancases.entity.Symptom;
+import com.datamart.humancases.service.GravityService;
 import com.datamart.humancases.service.HumanService;
 import com.datamart.humancases.service.StatusService;
 import com.datamart.humancases.service.SymptomService;
@@ -31,6 +33,9 @@ public class HumanController {
     @Autowired
     private StatusService statusService;
 
+    @Autowired
+    private GravityService gravityService;
+
     @GetMapping("/form/human-register")
     public ModelAndView getRegister() {
         ModelAndView mv = new ModelAndView("humanRegister");
@@ -39,6 +44,9 @@ public class HumanController {
 
         List<Status> statusList = this.statusService.getStatusList();
         mv.addObject("statusList", statusList);
+
+        List<Gravity> gravityList = this.gravityService.getGravityList();
+        mv.addObject("gravityList", gravityList);
         return mv;
     }
 
@@ -70,6 +78,9 @@ public class HumanController {
 
         List<Status> statusList = this.statusService.getStatusList();
         mv.addObject("statusList", statusList);
+
+        List<Gravity> gravityList = this.gravityService.getGravityList();
+        mv.addObject("gravityList", gravityList);
         return mv;
     }
 

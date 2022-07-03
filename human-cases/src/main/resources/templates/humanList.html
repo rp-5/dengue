@@ -28,7 +28,7 @@
                 <td th:text="${human.age}"></td>
                 <td th:text="${human.adress}"></td>
                 <td th:text="${human.complement}"></td>
-                <td th:text="${human.gravity}"></td>
+                <td th:text="${human.gravity.name}"></td>
                 <td th:text="${human.symptom.name}"></td>
                 <td th:text="${human.status.name}"></td>
                 <td>
@@ -38,7 +38,6 @@
                     <a th:href="@{/delete/human/{id}(id=${human.id})}">
                     <i class="fas fa-eraser"></i></a>
 
-                    <i style='font-size:24px' class='fas'>&#xf5d0;</i>
                 </td>
               </tr>
             </tbody>

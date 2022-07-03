@@ -46,14 +46,15 @@ public class Human {
     @JoinColumn(name= "symptom_id")
     private Symptom symptom;
 
-    @Column(name="gravity")
-    private String gravity;
+    @ManyToOne
+    @JoinColumn(name="gravity_id")
+    private Gravity gravity;
 
     @ManyToOne
     @JoinColumn(name="status_id")
     private Status status;
 
-    public Human(String name, int age, String adress, String complement, Symptom symptom, String gravity, Status status){
+    public Human(String name, int age, String adress, String complement, Symptom symptom, Gravity gravity, Status status){
         this.name = name;
         this.age = age;
         this.adress = adress;
