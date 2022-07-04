@@ -52,8 +52,21 @@ public class HumanController {
 
     @PostMapping("/form/save")
     public String saveForm(@Valid Human human, BindingResult result, RedirectAttributes redirect) {
+
+        if(result.hasErrors()){
+            redirect.addFlashAttribute("mensagem", "Verifique os campos obrigatórios");
+            return "redirect:/form/human-register";
+        }
+
         this.humanService.save(human);
-        return "redirect:/registered";
+        return "redirect:/list/human";
+    }
+
+    @PostMapping("/edit/save")
+    public String saveEdit(@Valid Human human, BindingResult result, RedirectAttributes redirect){
+
+        this.humanService.save(human);
+        return "redirect:/list/human";
     }
 
     @GetMapping("/list/human")
