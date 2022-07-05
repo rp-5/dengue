@@ -17,9 +17,15 @@
     <select name="symptom">
         <option th:each="symptom : ${symptomList}" th:value="${symptom.id}" th:text="${symptom.name}"></option>
     </select><br><br>
+
     <!-- <label>
-        <input type="checkbox" name="symptom" th:each="symptom : ${symptomList}" th:value="${symptom.id}" th:text="${symptom.name}" th:field="*{symptomList}"/>
+        <input type="checkbox" name="symptom" 
+        th:each="symptom : ${symptomList}" 
+        th:value="${symptom.id}" 
+        th:text="${symptom.name}" 
+        th:field="*{symptomList}"/>
     </label> -->
+
 
     Qual a gravidade<a style="color: red;">*<a></a>:
     <select name="gravity">
