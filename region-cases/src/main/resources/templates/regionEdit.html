@@ -5,6 +5,8 @@
 
 <form action="/edit/save" method="POST" style="text-align: center left;">
 
+    ID: <input type="number" readonly id="id" name="id" th:value="${region.id}"><br><br>
+
     Endereço<a style="color: red;">*<a>: <input type="text" id="address" name="address" th:value="${region.address}"/><br><br>
     
     Bairro<a style="color: red;">*<a>: <input type="text" id="district" name="district" th:value="${region.district}"/><br><br>
