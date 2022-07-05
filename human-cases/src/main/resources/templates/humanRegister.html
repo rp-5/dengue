@@ -13,10 +13,17 @@
 
     Complemento: <input type="text" id="complement" name="complement" /><br><br>
 
-    Quais são os sintomas<a style="color: red;">*<a></a>: 
+    <!-- Quais são os sintomas<a style="color: red;">*<a></a>: 
     <select name="symptom">
         <option th:each="symptom : ${symptomList}" th:value="${symptom.id}" th:text="${symptom.name}"></option>
-    </select><br><br>
+    </select><br><br> -->
+
+    Quais são os sintomas<a style="color: red;">*<a>: 
+        <select name="symptom" class="custom-select">
+            <option th:each="symptom : ${symptomList}" 
+            th:value="${symptom.id}" 
+            th:text="${symptom.name}"></option>
+        </select><br><br>
 
     <!-- <label>
         <input type="checkbox" name="symptom" 
