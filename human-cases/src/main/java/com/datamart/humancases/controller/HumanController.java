@@ -77,7 +77,7 @@ public class HumanController {
         return mv;
     }
 
-    @GetMapping("/edit/human/{id}")
+    @PostMapping("/edit/human/{id}")
     public ModelAndView getEdit(@PathVariable("id") Long id){
         ModelAndView mv = new ModelAndView("humanEdit");
         List<Human> humanList = this.humanService.findAll();
@@ -97,7 +97,7 @@ public class HumanController {
         return mv;
     }
 
-    @GetMapping("/delete/human/{id}")
+    @PostMapping("/delete/human/{id}")
     public String delete(@PathVariable("id")Long id){
         this.humanService.delete(id);
         return "redirect:/list/human";
