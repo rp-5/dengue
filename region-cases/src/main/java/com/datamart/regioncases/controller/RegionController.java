@@ -54,7 +54,7 @@ public class RegionController {
         return mv;
     }
 
-    @GetMapping("/edit/region/{id}")
+    @PostMapping("/edit/region/{id}")
     public ModelAndView getEdit(@PathVariable("id") Long id){
         ModelAndView mv = new ModelAndView("regionEdit");
         List<Region> regionList = this.regionService.findAll();
@@ -66,7 +66,7 @@ public class RegionController {
         return mv;
     }
 
-    @GetMapping("/delete/region/{id}")
+    @PostMapping("/delete/region/{id}")
     public String delete(@PathVariable("id")Long id){
         this.regionService.delete(id);
         return "redirect:/list/region";
