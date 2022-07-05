@@ -30,8 +30,8 @@ public class Region {
     private Long id;
 
     @NotBlank
-    @Column(name="adress")
-    private String adress;
+    @Column(name="address")
+    private String address;
     
     @NotBlank
     @Column(name= "district")
@@ -41,16 +41,14 @@ public class Region {
     @Column(name="city")
     private String city;
 
-    @NotBlank
     @Column(name="santadingWater")
     private Boolean standingWater;
 
-    @NotBlank
     @Column(name="mosquitoLarva")
     private Boolean mosquitoLarva;
 
-    public Region(String adress, String district, String city, Boolean standingWater, Boolean mosquitoLarva){
-        this.adress = adress;
+    public Region(String address, String district, String city, Boolean standingWater, Boolean mosquitoLarva){
+        this.address = address;
         this.district = district;
         this.city = city;
         this.standingWater = standingWater;

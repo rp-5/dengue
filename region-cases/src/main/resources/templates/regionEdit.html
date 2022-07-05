@@ -5,15 +5,24 @@
 
 <form action="/edit/save" method="POST" style="text-align: center left;">
 
-    Endereço<a style="color: red;">*<a>: <input type="text" id="adress" name="adress" th:value="${region.adress}"/><br><br>
+    Endereço<a style="color: red;">*<a>: <input type="text" id="address" name="address" th:value="${region.address}"/><br><br>
     
     Bairro<a style="color: red;">*<a>: <input type="text" id="district" name="district" th:value="${region.district}"/><br><br>
     
     Município<a style="color: red;">*<a>: <input type="text" id="city" name="city" th:value="${region.city}"/><br><br>
     
-    Acumulo de Água: <input type="text" id="standingWater" name="standingWater" th:value="${region.standingWater}"/><br><br>
+    Acumulo de Água: <a style="color: red;">*<a>: 
+        <select name="standingWater" id="standingWater" th:value="${region.standingWater}">
+            <option type="boolean" value=true>Sim</option>
+            <option type="boolean" value=false>Não</option>
+        </select>
+        <br><br>
     
-    Larva de Mosquito da Dengue: <input type="text" id="mosquitoLarva" name="mosquitoLarva" th:value="${region.mosquitoLarva}"/><br><br>
+    Larva de Mosquito da Dengue: <a style="color: red;">*<a>: 
+        <select name="mosquitoLarva" id="mosquitoLarva" th:value="${region.mosquitoLarva}">
+            <option type="boolean" value=true>Sim</option>
+            <option type="boolean" value=false>Não</option>
+        </select><br><br>
 
 
     <button class="btn btn-primary" type="submit">Atualizar Informações</button><br><br>
