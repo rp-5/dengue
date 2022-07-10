@@ -1,6 +1,7 @@
 package com.datamart.humancases.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,20 @@ public class HumanService {
 
     public void save(Human human) {
         this.humanRepository.save(human);
+    }
+
+    public void edit(Long id, Human oldHuman){
+        Human human = humanRepository.getById(id);
+        // if(){
+        // human.setName(oldHuman.getName());
+        // human.setAge(oldHuman.getAge());
+        // human.setAdress(oldHuman.getAdress());
+        // human.setComplement(oldHuman.getComplement());
+        // human.setSymptom(oldHuman.getSymptom());
+        // human.setGravity(oldHuman.getGravity());
+        // human.setStatus(oldHuman.getStatus());
+        // humanRepository.save(human);
+        // }
     }
 
     public List<Human> findAll(){
