@@ -41,17 +41,19 @@ public class Region {
     @Column(name="city")
     private String city;
 
-    @Column(name="santadingWater")
-    private Boolean standingWater;
+    @Column(name="santading_water")
+    // private Boolean standingWater;
+    private String santading_water;
 
-    @Column(name="mosquitoLarva")
-    private Boolean mosquitoLarva;
+    @Column(name="mosquito_larva")
+    // private Boolean mosquitoLarva;
+    private String mosquito_larva;
 
-    public Region(String address, String district, String city, Boolean standingWater, Boolean mosquitoLarva){
+    public Region(String address, String district, String city, String santading_water, String mosquito_larva){
         this.address = address;
         this.district = district;
         this.city = city;
-        this.standingWater = standingWater;
-        this.mosquitoLarva = mosquitoLarva;
+        this.santading_water = santading_water;
+        this.mosquito_larva = mosquito_larva;
     }
 }
