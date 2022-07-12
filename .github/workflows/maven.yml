@@ -23,4 +23,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B dengue-backend\human-cases --file pom.xml
+      run: mvn -B /home/runner/work/dengue-backend/human-cases --file pom.xml
